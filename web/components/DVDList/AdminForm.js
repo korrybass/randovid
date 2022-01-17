@@ -13,8 +13,8 @@ const options = ["comedy", "drama", "news", "reality"]
 
 const AdminForm = (props) => {
   const dispatch = useDispatch()
-  const {search} = useLocation()
-  
+  const { search } = useLocation()
+
   const onSubmit = (values) => {
     const body = {
       ...values,
@@ -28,7 +28,9 @@ const AdminForm = (props) => {
       className="admin-add-form"
       onSubmit={onSubmit}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
+        <form 
+        autocomplete="off"
+        onSubmit={handleSubmit}>
           <div className="form-input-section">
             <Field
               validate={required}
@@ -64,7 +66,9 @@ const AdminForm = (props) => {
             </label>
           </div>
 
-          <button className="submit" type="submit">Submit</button>
+          <button className="submit" type="submit">
+            Submit
+          </button>
         </form>
       )}
     />

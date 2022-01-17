@@ -1,5 +1,6 @@
 @use "../../scss/components/flexbox.scss";
 @use "../../scss/components/variables.scss";
+@use "../../scss/components/mediaqueries.scss";
 
 .modal-container {
   @include flexbox.flexbox();
@@ -15,6 +16,10 @@
     min-width: 400px;
     position: relative;
     box-shadow: 0px 0px 23px -2px #565656;
+
+    @include mediaqueries.respond-to("medium") {
+      min-width: 350px;
+    }
   }
 
   .modal-title {
@@ -35,7 +40,6 @@
     top: 5px;
     font-size: 30px;
     background-color: transparent;
-    
   }
 
   .modal-content {
