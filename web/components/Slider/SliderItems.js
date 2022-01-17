@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from "react"
 
 const generateItems = (items, ItemComponent) => {
   return items.map((item, idx) => {
@@ -7,13 +7,8 @@ const generateItems = (items, ItemComponent) => {
 }
 
 const SliderItems = (props) => {
-  console.log({props})
-  const {items, ItemComponent} = props
-	return (
-		<Fragment>
-      {generateItems(items, ItemComponent)}
-		</Fragment>
-	)
+  const { items, ItemComponent } = props
+  return <Fragment>{generateItems(items, ItemComponent)}</Fragment>
 }
 
 export default SliderItems

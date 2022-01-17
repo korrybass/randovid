@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react"
-import './modal.scss'
+import "./modal.scss"
 
 const Modal = (props) => {
   const { title, isOpen = false, onClose, children } = props
@@ -22,12 +22,12 @@ const Modal = (props) => {
     <div className="modal-container">
       <div className="modal-inner">
         <div className="modal-header">
-          <button className="modal-closeButton" onClick={closeModal}>&times;</button>
+          <button className="modal-closeButton" onClick={closeModal}>
+            &times;
+          </button>
           <h4 className="modal-title">{title}</h4>
         </div>
-        <div className="modal-content">
-          {children}
-        </div>
+        <div className="modal-content">{children}</div>
       </div>
     </div>
   )

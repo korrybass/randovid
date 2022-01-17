@@ -1,17 +1,17 @@
 import React from "react"
-import useDvdItem from "../../hooks/useDvdItem";
-import { useSearchParams } from 'react-router-dom';
-import ItemCard from './ItemCard'
-import './itemdetail.scss'
+import useDvdItem from "../../hooks/useDvdItem"
+import { useSearchParams } from "react-router-dom"
+import ItemCard from "./ItemCard"
+import "./itemdetail.scss"
 
 const ItemDetail = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams()
   const id = searchParams.get("id")
-  const {image, name} = useDvdItem({id})
+  const { image, name } = useDvdItem({ id })
 
   return (
     <div className="item-detail-container">
-      <ItemCard image={image} name={name}  />
+      <ItemCard image={image} name={name} />
     </div>
   )
 }

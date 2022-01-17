@@ -26,22 +26,22 @@
     padding-right: 15px;
     height: 100%;
 
-    p{
+    p {
       font-weight: 600;
       color: variables.$white();
       letter-spacing: 1.5px;
     }
   }
 
-  .links_container{
+  .links_container {
     display: flex;
 
-    a{
+    a {
       margin-right: 15px;
       color: variables.$white();
       text-decoration: none;
       font-weight: 600;
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
     }
   }
 }

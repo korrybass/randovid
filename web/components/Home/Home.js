@@ -22,7 +22,7 @@ const generateSliderItems = (items) => {
 }
 
 const Home = () => {
-  const {listItems} = useDvdData({ featured: true })
+  const { listItems } = useDvdData({ featured: true })
   return (
     <div className="home-container">
       <div className="lines">

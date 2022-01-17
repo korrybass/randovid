@@ -18,7 +18,6 @@ const fetchRespHandler = (fetchResponse, options) => {
       return data
     })
     .catch((err) => {
-      console.log("err", err)
       if (onError) {
         return onError(err)
       }
@@ -26,7 +25,7 @@ const fetchRespHandler = (fetchResponse, options) => {
     })
 }
 
-export const httpHandler = (request = {}, dispatch) => {
+export const httpHandler = (request = {}) => {
   const { type, url, body = {}, onSuccess, onError } = request
   if (type === "GET") {
     return fetchRespHandler(

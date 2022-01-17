@@ -2,10 +2,10 @@
 @use "../../scss/components/variables.scss";
 @use "../../scss/components/flexbox.scss";
 
-.list_container {
+.list-container {
   @include flexbox.flexbox();
 
-  .filterAndSorts_container {
+  .filterAndSorts-container {
     padding: 15px;
   }
 

@@ -3,7 +3,9 @@ import React from "react"
 const generateOptions = (options) => {
   return options.map((option, idx) => {
     return (
-      <option key={`category-option-${idx}`} value={option}>{option}</option>
+      <option key={`category-option-${idx}`} value={option}>
+        {option}
+      </option>
     )
   })
 }
@@ -14,7 +16,7 @@ const Select = (props) => {
   return (
     <div className="form-input">
       <select id={id} {...rest}>
-        <option value=''>Choose One</option>
+        <option value="">Choose One</option>
         {generateOptions(options)}
       </select>
     </div>

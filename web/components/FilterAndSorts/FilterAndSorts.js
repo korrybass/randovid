@@ -1,60 +1,51 @@
 import React from "react"
 import CheckBox from "../UIElements/CheckBox"
-import ParamInput from './ParamInput'
+import ParamInput from "./ParamInput"
 import RadioInput from "../UIElements/Radio"
-import { useSearchParams, useLocation } from 'react-router-dom';
-
+import { useSearchParams, useLocation } from "react-router-dom"
 
 const filters = ["comedy", "drama", "news", "reality"]
 const sorts = ["category", "name"]
-
-
 
 const FilterAndSorts = () => {
   const [searchParams, setSearchParams] = useSearchParams({})
   const handleFilter = (e) => {
     const { value } = e.target
-    let filters = searchParams.get('category')
+    let filters = searchParams.get("category")
 
     if (filters !== null) {
       if (filters.includes(value)) {
-        const updatedFilters = filters.split(',')
+        const updatedFilters = filters.split(",")
         updatedFilters.splice(updatedFilters.indexOf(value), 1)
-        filters = updatedFilters.join(',')
-      }
-      else {
+        filters = updatedFilters.join(",")
+      } else {
         filters = `${filters},${value}`
       }
-    }
-    else {
+    } else {
       filters = value
     }
 
     if (!filters.length) {
-      searchParams.delete('category')
-    }
-    else {
-      searchParams.set('category', filters)
+      searchParams.delete("category")
+    } else {
+      searchParams.set("category", filters)
     }
     setSearchParams(searchParams)
   }
 
   const handleSort = (e) => {
     const element = e.target
-    searchParams.set('sort', element.value)
+    searchParams.set("sort", element.value)
     setSearchParams(searchParams)
   }
 
   const generateCheckBoxList = (items) => {
     return items.map((item, idx) => {
       return (
-        <ParamInput
-          key={`filter=${idx}`}
-          inputId={item}
-          inputParam='category'
-        >
+        <ParamInput key={`filter=${idx}`} inputId={item} inputParam="category">
           <CheckBox
-            name={item} label={item}
+            name={item}
+            label={item}
             value={item}
             onChange={handleFilter}
           />
@@ -69,7 +60,7 @@ const FilterAndSorts = () => {
         <ParamInput
           key={`filter=${idx}`}
           inputId={`sort=${idx}`}
-          inputParam='sort'
+          inputParam="sort"
         >
           <RadioInput
             key={`sort-${idx}`}
@@ -80,13 +71,12 @@ const FilterAndSorts = () => {
             onChange={handleSort}
           />
         </ParamInput>
-
       )
     })
   }
 
   return (
-    <div className="filterAndSorts_container">
+    <div className="filterAndSorts-container">
       <div>
         <p>Filter</p>
         {generateCheckBoxList(filters)}

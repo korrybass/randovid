@@ -21,7 +21,7 @@ const updateData = (data) => {
 const deleteDataItem = (id) => {
   const oldData = getDataFile()
   const index = oldData.findIndex((item) => {
-    const itemValue = typeof item.id === 'number' ? item.id.toString() : item.id
+    const itemValue = typeof item.id === "number" ? item.id.toString() : item.id
     return itemValue === id
   })
 
@@ -81,8 +81,9 @@ const sortCompare = (a, b, sort) => {
 
 const findOne = (items, key, value) => {
   return items.find((item) => {
-  const itemValue = typeof item[key] === 'number' ? item[key].toString() : item[key]
-  return itemValue === value
+    const itemValue =
+      typeof item[key] === "number" ? item[key].toString() : item[key]
+    return itemValue === value
   })
 }
 

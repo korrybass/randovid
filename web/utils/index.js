@@ -1,9 +1,9 @@
 export const queryObectToString = (queryobj, key, newValue) => {
-  if(Object.keys(queryobj).length === 0 && !key && !newValue){
+  if (Object.keys(queryobj).length === 0 && !key && !newValue) {
     return ''
-  }else {
+  } else {
     let newQueryObject = {...queryobj}
-    if(key && newValue){
+    if (key && newValue) {
       newQueryObject = {...queryobj, [key]: newValue}
     }
     return Object.keys(newQueryObject)

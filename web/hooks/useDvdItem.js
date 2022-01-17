@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { handleGetItem } from "../redux/actions"
 import { queryObectToString } from "../utils"
 

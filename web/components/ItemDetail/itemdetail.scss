@@ -1,15 +1,14 @@
 @use "../../scss/components/mediaqueries.scss";
 
-.item-detail-container{
+.item-detail-container {
   width: 50vh;
   padding: 30px;
 
   @include mediaqueries.respond-to("small") {
-  width: 39vh;
-
+    width: 39vh;
   }
 
-  img{
+  img {
     box-shadow: 1px 1px 20px -5px #3c3c3c;
   }
 }

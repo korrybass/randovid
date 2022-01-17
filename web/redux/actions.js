@@ -3,7 +3,6 @@ import {
   FETCHING_DATA,
   GET_ITEM,
   SET_LIST_PARAMS,
-  UPDATE_DATA
 } from "./actionTypes"
 import {
   httpHandler,
@@ -12,13 +11,10 @@ import {
   POST_TYPE,
 } from "../utils/httpHandler"
 
-
-
-
 export const updateListParams = (params) => {
   return {
     type: SET_LIST_PARAMS,
-    params
+    params,
   }
 }
 
@@ -45,8 +41,7 @@ const getDvdItemsError = (error) => {
 
 export const handleGetDvdItems =
   (querystr = "") =>
-  (dispatch, getState) => {
-    const { params } = getState()
+  (dispatch) => {
     const req = {
       url: setRequestUrl("getlist", querystr),
       type: GET_TYPE,
@@ -65,6 +60,7 @@ export const getDvdItem = () => {
 const getDvdItemSuccess = (resp, dispatch) => {
   return dispatch(getDvdItem(resp))
 }
+
 const getDvdItemError = (error) => {
   return { error }
 }
@@ -79,21 +75,23 @@ export const handleGetItem = (id) => (dispatch) => {
   return httpHandler(req, dispatch)
 }
 
-
 const onUpdateDataSuccess = (resp, dispatch) => {
   dispatch(getDvdItems(resp))
 }
+
 const onUpdataDataError = (error) => {
   return { error }
 }
 
 export const handleUpdateData = (item, query) => (dispatch) => {
   const req = {
-    url: query ? setRequestUrl('updateData', query) : setRequestUrl('updateData'),
+    url: query
+      ? setRequestUrl("updateData", query)
+      : setRequestUrl("updateData"),
     type: POST_TYPE,
     body: item,
     onSuccess: (resp) => onUpdateDataSuccess(resp, dispatch),
-    onError: () => onUpdataDataError(resp)
+    onError: () => onUpdataDataError(resp),
   }
 
   return httpHandler(req)
