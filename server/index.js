@@ -105,7 +105,7 @@ const getDataFile = () => {
 //Api endpoints
 app.get(`${apiBase}/getlist`, (req, res) => {
   const { query } = req
-  const { sort, ...filters } = query
+  const { sort, admin, ...filters } = query
   let results = getDataFile()
   if (filters) {
     results = filterResults(results, filters)

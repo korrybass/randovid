@@ -34,7 +34,7 @@ const DVDList = () => {
   const [searchParams] = useSearchParams()
   const category = searchParams.get("category")
   const sort = searchParams.get("sort")
-  const isAdmin = searchParams.get("isadmin")
+  const isAdmin = searchParams.get("admin")
   const { listItems, hasFetched } = useDvdData(
     getFormattedDataQuery(sort, category)
   )

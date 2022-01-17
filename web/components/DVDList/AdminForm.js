@@ -1,6 +1,7 @@
 import React from "react"
 import { handleUpdateData } from "../../redux/actions"
 import { useDispatch } from "react-redux"
+import { useLocation } from "react-router-dom"
 import { v4 as uuidv4 } from "uuid"
 import { Form, Field } from "react-final-form"
 import RFFormElement from "../UIElements/RFFormElement"
@@ -12,13 +13,14 @@ const options = ["comedy", "drama", "news", "reality"]
 
 const AdminForm = (props) => {
   const dispatch = useDispatch()
-
+  const {search} = useLocation()
+  
   const onSubmit = (values) => {
     const body = {
       ...values,
       id: uuidv4(),
     }
-    dispatch(handleUpdateData(body))
+    dispatch(handleUpdateData(body, null, search))
     props.onFinish()
   }
   return (
@@ -62,7 +64,7 @@ const AdminForm = (props) => {
             </label>
           </div>
 
-          <button type="submit">Submit</button>
+          <button className="submit" type="submit">Submit</button>
         </form>
       )}
     />

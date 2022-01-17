@@ -36,8 +36,13 @@ button {
   border: none;
   border-radius: 3px;
   outline: none;
-  padding: 4px 8px;
+  padding: 8px 20px;
   margin-bottom: 3px;
+  cursor: pointer;
+}
+.submit{
+  @include variables.gradientColor();
+  color: variables.$white;
 }
 
 .checkbox-input,
@@ -59,7 +64,7 @@ button {
 .form-error {
   color: #e5e5e5;
   background-color: #a10202;
-  padding: 2px 8px;
+  padding: 5px 8px;
   font-size: 12px;
   p {
     margin: 0;

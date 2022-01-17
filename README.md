@@ -12,9 +12,9 @@ After all modules are installed you can run the project with the **`npm start`**
 The following technologies were used for this site
 
 ### Frontend
-React: View layer, using component design pattern 
-Webpack: Used for bundling, handing assets (images, styles), transpiling of es6
-Sass: Versatile style management
+React: View layer, using component design pattern <br />
+Webpack: Used for bundling, handing assets (images, styles), transpiling of es6<br />
+Sass: Versatile style management<br />
 Redux: Global state management
 
 ### Backend

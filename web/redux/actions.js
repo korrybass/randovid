@@ -75,22 +75,22 @@ export const handleGetItem = (id) => (dispatch) => {
   return httpHandler(req, dispatch)
 }
 
-const onUpdateDataSuccess = (resp, dispatch) => {
-  dispatch(getDvdItems(resp))
+const onUpdateDataSuccess = (params, dispatch) => {
+  dispatch(handleGetDvdItems(params))
 }
 
 const onUpdataDataError = (error) => {
   return { error }
 }
 
-export const handleUpdateData = (item, query) => (dispatch) => {
+export const handleUpdateData = (item, query, params = "") => (dispatch) => {
   const req = {
     url: query
       ? setRequestUrl("updateData", query)
       : setRequestUrl("updateData"),
     type: POST_TYPE,
     body: item,
-    onSuccess: (resp) => onUpdateDataSuccess(resp, dispatch),
+    onSuccess: () => onUpdateDataSuccess(params.replace("?", ""), dispatch),
     onError: () => onUpdataDataError(resp),
   }
 
