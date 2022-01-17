@@ -1,0 +1,42 @@
+@use "../../scss/components/flexbox.scss";
+@use "../../scss/components/variables.scss";
+
+.modal-container {
+  @include flexbox.flexbox();
+  @include flexbox.align-items(center);
+  @include flexbox.justify-content(center);
+  @include flexbox.flex-direction(column);
+  background-color: rgb(241 241 241 / 45%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  .modal-inner {
+    min-width: 400px;
+    position: relative;
+    box-shadow: 0px 0px 23px -2px #565656;
+  }
+
+  .modal-title {
+    @include variables.gradientColor();
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+  }
+  .modal-closeButton {
+    position: absolute;
+    right: 5px;
+    border: none;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+    font-size: 30px;
+    background-color: transparent;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 15px;
+  }
+}

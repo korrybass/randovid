@@ -1,0 +1,11 @@
+$white: #d9d9d9;
+$offWhite: #fbfbfb;
+$middlegray: #383838;
+$darkgray: #1d1d1d;
+$borderColor: #dfdfdf;
+$red: #9d0e0e;
+
+@mixin gradientColor {
+  background: rgb(84, 1, 97);
+  background: linear-gradient(137deg, rgba(39, 126, 208, 1) 0%, rgba(84, 1, 97, 1) 100%);
+}

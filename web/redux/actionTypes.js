@@ -1,0 +1,5 @@
+export const GET_DVD_ITEMS = 'GET_DVD_ITEMS'
+export const GET_ITEM = 'GET_ITEM'
+export const FETCHING_DATA = 'FETCHING_DATA'
+export const SET_LIST_PARAMS = 'SET_LIST_PARAMS'
+export const UPDATE_DATA = 'UPDATE_DATA'

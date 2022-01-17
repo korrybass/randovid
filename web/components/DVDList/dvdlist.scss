@@ -1,0 +1,94 @@
+@use "../../scss/components/mediaqueries.scss";
+@use "../../scss/components/variables.scss";
+@use "../../scss/components/flexbox.scss";
+
+.list_container {
+  @include flexbox.flexbox();
+
+  .filterAndSorts_container {
+    padding: 15px;
+  }
+
+  .filter_sorts {
+    max-width: 180px;
+    width: 100%;
+    background-color: variables.$offWhite;
+    border-top: 1px solid variables.$borderColor;
+    border-right: 1px solid variables.$borderColor;
+    position: fixed;
+    height: calc(100vh - 60px);
+
+    @include mediaqueries.respond-to("medium") {
+      width: 120px;
+    }
+  }
+
+  .list-content {
+    margin-left: 180px;
+    width: 100%;
+
+    @include mediaqueries.respond-to("medium") {
+      margin-left: 120px;
+    }
+    .admin-control-panel {
+      @include flexbox.flexbox();
+      margin-top: 30px;
+      padding: 10px 20px;
+    }
+  }
+
+  .add-btn {
+    @include variables.gradientColor();
+    color: white;
+    padding: 8px 20px;
+  }
+
+  .listItems {
+    @include flexbox.flexbox();
+    @include flexbox.flex-wrap(wrap);
+    padding: 10px;
+
+    .list-item-container {
+      @include flexbox.flex-basis(30%);
+      margin: 0 4px 15px;
+      background-color: #fff;
+      padding: 7px;
+      text-decoration: none;
+
+      @include mediaqueries.respond-to("medium") {
+        @include flexbox.flex-basis(41%);
+      }
+
+      &:hover {
+        box-shadow: 1px 1px 20px -4px #b9b9b9;
+      }
+
+      .delete-btn {
+        color: #fff;
+        border-radius: 3px;
+        outline: none;
+        padding: 4px 8px;
+        margin-bottom: 3px;
+        background-color: variables.$red;
+      }
+    }
+    .list_item {
+      img {
+        margin-bottom: 5px;
+      }
+
+      p {
+        margin: 0 0 6px;
+        font-size: 14px;
+        color: #000;
+        text-transform: capitalize;
+
+        &.category {
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
