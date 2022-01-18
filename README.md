@@ -21,7 +21,7 @@ Redux: Global state management
 ExpressJS: I wanted to mimic a real world scenario of calling an api to read and write data.
 
 ## Other Notes
--Since this is a practice project I'm just running it as webpack dev server instead of making a production build. That would need to be hosted. 
+-Since this is a practice project I'm just running it as webpack dev server instead of making a production build that would need to be hosted. 
 
 -In the webpack dev server config I'm running the api through a proxy so that it can be called using the current web browser url instead of using the express server's url and port. 
 
