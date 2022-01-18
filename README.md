@@ -2,25 +2,31 @@
 
 ## Installing the Project
 
-First make sure you have npm and node on your computer. Then run **`npm install`** at the root of this project
+First make sure you have npm and node on your computer. <br />
+You need atleast npm version 8.0.0 or higher and node 14 or higher <br />
+Then run **`npm install`** at the root of this project
 
 ## Running the Project
 
 After all modules are installed you can run the project with the **`npm start`** command. This will concurrently start a webpack dev server for frontend and a node express server for api calls. You can view the site at `localhost:3000`
 
 ## Architecture Considerations
+
 The following technologies were used for this site
 
 ### Frontend
+
 React: View layer, using component design pattern <br />
-Webpack: Used for bundling, handing assets (images, styles), transpiling of es6<br />
+Webpack: Used for bundling, handling assets (images, styles), transpiling of es6<br />
 Sass: Versatile style management<br />
 Redux: Global state management
 
 ### Backend
-ExpressJS: I wanted to mimic a real world scenario of calling an api to read and write data.
+
+ExpressJS: I wanted to mimic a real world scenario of calling an api to read and write data, instead of using localstorage in the browser.
 
 ## Other Notes
+
 -Since this is a practice project I'm just running it as webpack dev server instead of making a production build that would need to be hosted. 
 
 -In the webpack dev server config I'm running the api through a proxy so that it can be called using the current web browser url instead of using the express server's url and port. 
