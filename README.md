@@ -35,4 +35,6 @@ ExpressJS: I wanted to mimic a real world scenario of calling an api to read and
 
 -When building this out I would have clarified with design/business how the filter and sorting should be handled. For example if someone sorts by category and  filters by category at the same time, the results are the same as just filtering by category. Just something I would mention at some point.
 
+-I added 1 simple unit test that tests a utility function I had. In a real world situation I'd have test with the components and other code as well. That jest test can be ran using `npm test`
+
 -Fun project
